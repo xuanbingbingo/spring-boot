@@ -30,7 +30,7 @@ public class HelloController {
 //    }
 
     //请求参数，方式二：localhost:8081/hello/say?id=100
-    @RequestMapping(value = "/say",method = RequestMethod.POST)
+    @RequestMapping(value = "/say",method = RequestMethod.GET)
     //上面这段代码等同于@GetMapping(value = "/say")
     public String say(@RequestParam(value = "id",required = false, defaultValue = "0") Integer myId){
         return "id: "+ myId;
