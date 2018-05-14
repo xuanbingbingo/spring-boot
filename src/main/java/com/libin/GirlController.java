@@ -10,6 +10,8 @@ public class GirlController {
     @Autowired
     private GirlRepository girlRepository;
 
+    @Autowired
+    private GirlService girlService;
     //查询数据库girls的集合
     @GetMapping(value = "/girls")
     public List<Girl> girlList(){
@@ -57,6 +59,11 @@ public class GirlController {
     @DeleteMapping(value = "/girls/{id}")
     public void girlUpdate(@PathVariable("id") Integer id){
         girlRepository.delete(id);
+    }
+
+    @PostMapping(value = "/girls/two")
+    public void girlTwo(){
+        girlService.insertTwo();
     }
 
 }
